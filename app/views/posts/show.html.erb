@@ -1,0 +1,27 @@
+<%= link_to posts_path, class: "text-decoration-none" do %>
+  <p class="text-muted ms-3 mt-3"><i class="fa-solid fa-backward"></i> Back to posts</p>
+<% end %>
+<div class="container w-75 d-flex flex-column align-items-center">
+  <%= image_tag @post.user.photo, width: 100, height: 100 %>
+  <h2 class="text-center w-75" style="padding-top: 36px;"><%= @post.title %></h2>
+  <h4 class="text-center pt-2">Published by <%= link_to @post.user.nickname, user_path(@post.user), class: "text-decoration-none" %></h4>
+
+  <p class="pt-4"><%= @post.content %></p>
+  <p>Check out the original post <a href="<%= @post.url %>" target="_blank">here</a>.</p>
+
+  <h3 class="pt-4">Comments</h3>
+  <div data-controller="comments">
+    <div class="comments-container mt-4" data-comments-target="comments">
+      <% if @comments.length == 0 %>
+         <p>No comments have been posted at the moment. Why don't you leave one?</p>
+      <% else %>
+        <% @comments.each do |comment|%>
+            <%= render 'posts/comment', comment: comment %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="form-container d-flex flex-column align-items-center" data-comments-target="test">
+      <%= render 'shared/comment_form', post: @post, comment: @comment %>
+    </div>
+  </div>
+</div>

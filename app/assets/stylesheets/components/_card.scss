@@ -1,0 +1,21 @@
+.card {
+  &:active {
+    $box-shadow-sm: 0 .125rem .25rem rgba($black, .075) !important;
+  }
+  &:hover {
+    box-shadow: 0 .5rem 1rem rgba($black, .15) !important;
+  }
+}
+
+.post-list {
+  a {
+    color: $body-color;
+    text-decoration: none;
+  }
+
+  .card {
+    border-style: none;
+    border-radius: 8px;
+    height:225px;
+  }
+}

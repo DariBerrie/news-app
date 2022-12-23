@@ -1,0 +1,4 @@
+<div class="comment bg-white shadow-sm p-4 m-3" style="border-radius:8px; width: 600px;">
+  <p><%= comment.content %></p>
+  <p class="text-muted fst-italic">Published <%= @post.created_at.strftime('%B %e, %Y') %> by <%= comment.user.nickname %></p>
+</div>

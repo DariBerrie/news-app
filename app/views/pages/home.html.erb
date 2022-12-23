@@ -1,0 +1,30 @@
+<ul id="categories" class="d-flex justify-content-center">
+  <li><%= link_to "ART", root_path, class: "text-decoration-none text-white" %></li>
+  <li><%= link_to "BUSINESS", root_path, class: "text-decoration-none text-white" %></li>
+  <li><%= link_to "DESIGN", root_path, class: "text-decoration-none text-white" %></li>
+  <li><%= link_to "ECONOMICS", root_path, class: "text-decoration-none text-white" %></li>
+  <li><%= link_to "ENVIRONMENT", root_path, class: "text-decoration-none text-white" %></li>
+  <li><%= link_to "POLITICS", root_path, class: "text-decoration-none text-white" %></li>
+  <li><%= link_to "SCIENCE", root_path, class: "text-decoration-none text-white" %></li>
+  <li><%= link_to "TECH", root_path, class: "text-decoration-none text-white" %></li>
+</ul>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1503694978374-8a2fa686963a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=300);">
+  <div class="container">
+    <h1>Read the latest on Evidens</h1>
+    <h3 class="mt-3 text-white">Your #1 source for community news</h3>
+    <%= link_to "Check out all of our articles", posts_path, class: "btn btn-primary fw-bold fs-4 text-white mt-3 p-2",
+        style: "border-radius:16px;" %>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <h3 class="text-center">Recent Articles</h3>
+  <div class="d-flex flex-row justify-content-center">
+    <div class="post-list d-flex flex-wrap justify-content-center">
+      <% @posts[0..3].each do |post| %>
+        <%= render 'shared/post-card', post: post %>
+      <% end %>
+    </div>
+  </div>
+</div>

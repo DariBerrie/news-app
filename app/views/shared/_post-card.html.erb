@@ -1,0 +1,13 @@
+<%= link_to post_path(post) do %>
+<div class="card m-3 shadow-sm" style="width:35em">
+  <div class="card-body">
+    <h4 class="card-title"><%= post.title %></h4>
+    <p class="card-text"><%= post.content.body.to_plain_text[0..140].capitalize %>[...]</p>
+    <div class="user-bar d-flex flex-row justify-content-between">
+      <p class="text-muted">Published by <%= post.user.nickname %> on
+      <%= post.created_at.strftime('%B %e, %Y') %></p>
+      <%= image_tag post.user.photo, class: "avatar" %>
+    </div>
+  </div>
+</div>
+<% end %>

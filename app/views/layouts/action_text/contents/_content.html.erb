@@ -1,0 +1,8 @@
+<div class="trix-content">
+  <%= yield -%>
+  <script>
+    document.addEventListener("trix-file-accept", function(event) {
+      event.preventDefault();
+    });
+  </script>
+</div>

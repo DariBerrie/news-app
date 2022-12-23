@@ -1,0 +1,10 @@
+<div class="comment-form w-50">
+      <%= simple_form_for [post, comment],
+          data: { comments_target: "form", action: "submit->comments#update" } do |f| %>
+        <div class="d-flex flex-column align-items-center">
+          <%= f.input :content, label: false, placeholder: "Enter your comment here",
+                      input_html: { class: "bg-white", style: "width: 600px;"} %>
+          <%= f.submit "Submit comment", class: "btn btn-primary fw-bold text-white" %>
+        </div>
+      <% end %>
+    </div>

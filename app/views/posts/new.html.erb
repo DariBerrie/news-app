@@ -1,0 +1,12 @@
+<div class="container d-flex flex-column align-items-center">
+  <h2 class="pt-3 my-4">Publish an article</h2>
+  <%= simple_form_for @post do |f| %>
+    <div class="form-container d-flex flex-column align-items-center">
+      <%= f.input :title, label: false, placeholder: "Enter the title", input_html: { class: "bg-white", style:"width:650px"} %>
+      <%= f.input :url, label: false, placeholder: "Enter article's URL", input_html: { class: "bg-white", style: "width:650px" }  %>
+      <%= f.input :content, as: :rich_text_area, label: false,
+                  placeholder: "Write the article here", input_html: { class: "bg-white", style: "width:650px; min-height: 300px;" }  %>
+      <%= f.submit "Submit your article", class: "btn btn-primary fw-bold text-white" %>
+    </div>
+  <% end %>
+</div>
